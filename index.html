@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Five Lightbulbs Framework</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Krub', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background-color: #F8F6F3;
+            font-size: 18px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: block;
+            line-height: 0;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            max-width: 350px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d3436;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00A9E0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 80px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 7rem;
+            color: #00A9E0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .hero .subheadline {
+            font-size: 1.3rem;
+            color: #636e72;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .bridge-placeholder {
+            background: linear-gradient(135deg, #00A9E0 0%, #0088B8 100%);
+            height: 300px;
+            margin: 50px 0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #E63946;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c92a36;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Book Section */
+        .book-section {
+            background: #FFF9E6;
+            padding: 60px;
+            border-radius: 12px;
+            margin: 80px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .book-section h2 {
+            color: #00A9E0;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .book-cover-placeholder {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            height: 400px;
+            width: 300px;
+            margin: 0 auto 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            margin: 80px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: #00A9E0;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: #636e72;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Framework Section */
+        .framework {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .framework h2 {
+            text-align: center;
+            color: #00A9E0;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+
+        .framework-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            font-size: 1.2rem;
+            color: #636e72;
+        }
+
+        .lightbulb {
+            margin: 120px 0;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .lightbulb:nth-child(even) {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .lightbulb:nth-child(even) .lightbulb-content {
+            order: -1;
+        }
+
+        .lightbulb-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .lightbulb h3 {
+            color: #00A9E0;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .lightbulb h3::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00A9E0;
+            opacity: 0.3;
+        }
+
+        .lightbulb p {
+            color: #636e72;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .framework-diagram {
+            margin: 80px 0;
+            height: 400px;
+            background: linear-gradient(135deg, #00A9E0 0%, #0088B8 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .framework-closing {
+            max-width: 800px;
+            margin: 60px auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #636e72;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about h2 {
+            color: #00A9E0;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            margin-bottom: 25px;
+            color: #636e72;
+            line-height: 1.8;
+        }
+
+        .billy-photo {
+            width: 300px;
+            height: 300px;
+            background: #00A9E0;
+            border-radius: 12px;
+            margin: 40px auto;
+        }
+
+        .about-subsection {
+            margin: 80px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1.1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .lightbulb {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbulb:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .lightbulb:nth-child(even) .lightbulb-content {
+                order: 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .book-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="The Five Lightbulbs">
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>The Five Lightbulbs Framework</h1>
+            <p class="subheadline">Every product is a life-changing message. Billy Broas created this simple yet powerful framework to help you discover it.</p>
+
+            <img src="images/The-Five-Lightbulbs-Messaging-Framework.jpg" alt="The Five Lightbulbs Framework Bridge" style="width: 100%; max-width: 100%; margin: 50px 0; display: block;">
+
+            <a href="#framework" class="btn btn-primary" style="margin-top: 30px;">See the Framework</a>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="framework">
+        <div class="container">
+            <h2>The Five Lightbulbs framework</h2>
+            <p class="framework-intro">The Five Lightbulbs framework tells a story. It's the story of how a prospect becomes a customer. When you map your product messaging to this story and give your customers these five 'aha moments,' they'll see you as their best option.</p>
+
+            <!-- Lightbulb 1 -->
+            <div class="lightbulb">
+                <img src="images/5-Lightbulbs-Lightbulb-1.jpg" alt="Lightbulb 1 - Your Customer's Status Quo" class="lightbulb-image">
+                <div class="lightbulb-content">
+                    <h3 data-number="1">Lightbulb 1 - Your Customer's Status Quo</h3>
+                    <p>It's critical to meet your customer where they are. We call this place their status quo, or their unacceptable status quo.</p>
+                    <p>Lightbulb 1 represents language to capture the customer's status quo. It's the language of empathy, and of speaking the words that make your customer realize, "This person gets me."</p>
+                </div>
+            </div>
+
+            <!-- Lightbulb 2 -->
+            <div class="lightbulb">
+                <img src="images/5-Lightbulbs-Lightbulb-2-Other-Things-Theyve-Tried.jpg" alt="Lightbulb 2 - Other Things They've Tried" class="lightbulb-image">
+                <div class="lightbulb-content">
+                    <h3 data-number="2">Lightbulb 2 - Other Things They've Tried</h3>
+                    <p>Are we the only choice available to our customers? We wish. But let's be honest, the answer is no.</p>
+                    <p>And it'd be a mistake to cover our eyes and pretend those other bridges don't exist.</p>
+                    <p>With The Five Lightbulbs, we speak to these other options. Lightbulb 2 represents language around the other bridges your customer has tried.</p>
+                </div>
+            </div>
+
+            <!-- Lightbulb 3 -->
+            <div class="lightbulb">
+                <img src="images/5-Lightbulbs-Lightbulb-3-Your-Approach-1.jpg" alt="Lightbulb 3 - Your Approach" class="lightbulb-image">
+                <div class="lightbulb-content">
+                    <h3 data-number="3">Lightbulb 3 - Your Approach</h3>
+                    <p>Lightbulb 3 is a powerful one. It's the first Lightbulb that focuses on you, the seller, but it doesn't represent your product.</p>
+                    <p>Lightbulb 3 represents your approach; it describes the way your product solves a particular customer's problem.</p>
+                    <p>Giving voice to Lightbulb 3 is the best way to stand out in a crowded marketplace.</p>
+                </div>
+            </div>
+
+            <!-- Lightbulb 4 -->
+            <div class="lightbulb">
+                <img src="images/5-Lightbulbs-Lightbulb-4-Your-Offer.jpg" alt="Lightbulb 4 - Your Offer" class="lightbulb-image">
+                <div class="lightbulb-content">
+                    <h3 data-number="4">Lightbulb 4 - Your Offer</h3>
+                    <p>Lightbulb 4 is the most straightforward. It represents your product. But we call it your "offer."</p>
+                    <p>Your offer includes your product, but there's more to a great offer than the product alone.</p>
+                    <p>Many businesses only speak to their Lightbulb 4, which we call being "stuck in the Lightbulb 4 silo."</p>
+                </div>
+            </div>
+
+            <!-- Lightbulb 5 -->
+            <div class="lightbulb">
+                <img src="images/5-Lightbulbs-Lightbulb-5-Your-Customers-New-Life.jpg" alt="Lightbulb 5 - Your Customer's New Life" class="lightbulb-image">
+                <div class="lightbulb-content">
+                    <h3 data-number="5">Lightbulb 5 - Your Customer's New Life</h3>
+                    <p>It's important to connect the dots between your product and what it can do for someone.</p>
+                    <p>Lightbulb 5 paints a picture of life after success with your product, on the other side of the bridge.</p>
+                    <p>Neglect this Lightbulb and you might get interest, but not action.</p>
+                </div>
+            </div>
+
+            <!-- Full Diagram -->
+            <img src="images/The-Five-Lightbulbs-Messaging-Framework.jpg" alt="Complete Five Lightbulbs Framework" style="width: 100%; max-width: 1000px; margin: 80px auto; display: block; border-radius: 12px;">
+
+            <div class="framework-closing">
+                <p>These are the Five Lightbulbs. Don't let them fool you—they're simple, but you can spend years exploring their depths.</p>
+                <p>If you want to go deeper into The Five Lightbulbs, start by reading Billy's book, Simple Marketing for Smart People, which shares the marketing philosophy behind The Five Lightbulbs.</p>
+                <a href="https://www.amazon.com/Simple-Marketing-Smart-People-Overthinking/dp/1544534477" target="_blank" class="btn btn-primary">Get the Book</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-subsection">
+                    <h2>About The Five Lightbulbs</h2>
+                    <p>The Five Lightbulbs framework gives you a better way to build your marketing message—one that respects your audience's intelligence.</p>
+                    <p>Most marketing approaches treat persuasion as manipulation: bypass rational thinking, trigger subconscious responses, create artificial urgency. But humans aren't machines to be hacked.</p>
+                    <p>The Five Lightbulbs takes a different approach: we build clear, honest arguments. We appeal to people's better judgment, not their weaknesses. We give them genuine reasons to believe, not psychological tricks.</p>
+                    <p>This framework helps you construct a compelling case for why someone should choose you—through reasoning, not manipulation.</p>
+                    <p>Your business is fueled by words: the words on your sales page, website, emails, ads, and the words you say to prospects on sales calls.</p>
+                    <p>Those words matter.</p>
+                    <p>The Five Lightbulbs gives you messaging that persuades through clarity and conviction, not tricks and tactics.</p>
+                </div>
+
+                <div class="about-subsection">
+                    <h2>About Billy</h2>
+                    <img src="images/billy-broas-photo.jpg" alt="Billy Broas" style="max-width: 400px; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <p>I'm Billy Broas, creator of the Five Lightbulbs framework.</p>
+                    <p>My background isn't in marketing—I studied science and technology, spent seven years in energy, and learned marketing only when I needed to build my own business.</p>
+                    <p>That outsider perspective revealed something troubling: most marketing had become a race to manipulate rather than persuade. I wanted an approach grounded in honest persuasion, not psychological exploitation.</p>
+                    <p>The Five Lightbulbs emerged from that conviction. It's built for established professionals who want clarity in their marketing without compromising their integrity.</p>
+                    <p>If you believe marketing should respect intelligence and build genuine conviction—not hack psychology and manufacture urgency—this framework is for you.</p>
+
+                    <h3 style="color: #00A9E0; margin: 40px 0 20px;">Want to go deeper?</h3>
+                    <p>Start with my book, <em>Simple Marketing for Smart People</em>. It explores the philosophy behind argument-based marketing and why it works better than manipulation-based tactics.</p>
+                    <p>Rooting for you,<br><strong>Billy</strong></p>
+
+                    <div class="book-section">
+                        <img src="images/simple-marketing-for-smart-people-book.png" alt="Simple Marketing for Smart People book cover" style="max-width: 300px; margin: 0 auto 30px; display: block;">
+                        <p style="text-align: center; margin-bottom: 30px;"><strong>Now Available - Order on Amazon</strong></p>
+                        <div style="text-align: center;">
+                            <a href="https://www.amazon.com/Simple-Marketing-Smart-People-Overthinking/dp/1544534477" target="_blank" class="btn btn-primary">Get the Book</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms and Conditions</a>
+                <a href="mailto:billy@fivelightbulbs.com">Send us a message</a>
+            </div>
+            <p>&copy; 2025 Lynchpin Media</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling is handled by CSS scroll-behavior: smooth
+        // No additional JavaScript needed for basic smooth scrolling
+    </script>
+</body>
+</html>
