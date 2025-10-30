@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Five Lightbulbs Framework</title>
+    <title>The Five Lightbulbs Framework - Marketing Without Manipulation by Billy Broas</title>
+    <meta name="description" content="The Five Lightbulbs is a simple yet powerful framework for crafting marketing messages that persuade through clarity and conviction, not tricks and tactics. Created by Billy Broas.">
+    <meta name="author" content="Billy Broas">
+    <meta name="keywords" content="Five Lightbulbs, marketing framework, Billy Broas, argument-based marketing, ethical marketing, marketing philosophy">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fivelightbulbs.com/">
+    <meta property="og:title" content="The Five Lightbulbs Framework - Marketing Without Manipulation">
+    <meta property="og:description" content="A simple yet powerful framework for crafting marketing messages that persuade through clarity and conviction, not tricks and tactics. Created by Billy Broas.">
+    <meta property="og:image" content="https://fivelightbulbs.com/images/The-Five-Lightbulbs-Messaging-Framework.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fivelightbulbs.com/">
+    <meta property="twitter:title" content="The Five Lightbulbs Framework - Marketing Without Manipulation">
+    <meta property="twitter:description" content="A simple yet powerful framework for crafting marketing messages that persuade through clarity and conviction, not tricks and tactics.">
+    <meta property="twitter:image" content="https://fivelightbulbs.com/images/The-Five-Lightbulbs-Messaging-Framework.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32-1.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +44,7 @@
             font-family: 'Krub', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
             line-height: 1.7;
             color: #2d3436;
-            background-color: #F8F6F3;
+            background-color: #FFFFFF;
             font-size: 18px;
         }
 
@@ -86,7 +107,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 100px 0;
+            padding: 100px 0 35px 0;
         }
 
         .hero h1 {
@@ -101,7 +122,38 @@
             font-size: 1.3rem;
             color: #636e72;
             max-width: 800px;
-            margin: 0 auto 50px;
+            margin: 20px auto;
+            line-height: 1.7;
+        }
+
+        /* Hero CTA Button */
+        .hero-cta {
+            background: #E63946;
+            color: white;
+            padding: 16px 40px;
+            font-size: 20px;
+            border-radius: 8px;
+            margin: 50px auto;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease;
+            font-weight: 600;
+        }
+
+        .hero-cta:hover {
+            background: #d32f3c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Hero Bridge Graphic */
+        .hero-bridge {
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto;
+            display: block;
         }
 
         .bridge-placeholder {
@@ -222,8 +274,7 @@
 
         /* Framework Section */
         .framework {
-            background: white;
-            padding: 100px 0;
+            padding: 0 0 100px 0;
         }
 
         .framework h2 {
@@ -235,10 +286,12 @@
 
         .framework-intro {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 80px;
-            font-size: 1.2rem;
-            color: #636e72;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            padding: 0 20px;
         }
 
         .lightbulb {
@@ -247,6 +300,10 @@
             grid-template-columns: 1.2fr 1fr;
             gap: 60px;
             align-items: center;
+        }
+
+        .lightbulb:first-of-type {
+            margin-top: 0;
         }
 
         .lightbulb:nth-child(even) {
@@ -266,19 +323,6 @@
             color: #00A9E0;
             font-size: 1.8rem;
             margin-bottom: 20px;
-            position: relative;
-            padding-left: 80px;
-        }
-
-        .lightbulb h3::before {
-            content: attr(data-number);
-            position: absolute;
-            left: 0;
-            top: -10px;
-            font-size: 4rem;
-            font-weight: 700;
-            color: #00A9E0;
-            opacity: 0.3;
         }
 
         .lightbulb p {
@@ -301,7 +345,7 @@
 
         .framework-closing {
             max-width: 800px;
-            margin: 60px auto;
+            margin: 0 auto 40px auto;
             text-align: center;
             font-size: 1.1rem;
             color: #636e72;
@@ -309,59 +353,70 @@
 
         /* About Section */
         .about {
-            padding: 100px 0;
+            padding: 40px 0 100px 0;
         }
 
-        .about h2 {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 80px;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
             color: #00A9E0;
             font-size: 2.5rem;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            margin-top: 0;
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-content p {
+        .about-text p {
             margin-bottom: 25px;
             color: #636e72;
             line-height: 1.8;
         }
 
-        .billy-photo {
-            width: 300px;
-            height: 300px;
-            background: #00A9E0;
-            border-radius: 12px;
-            margin: 40px auto;
+        .about-text h3 {
+            color: #00A9E0;
+            font-size: 1.5rem;
+            margin: 40px 0 20px 0;
         }
 
-        .about-subsection {
-            margin: 80px 0;
+        .about-text a {
+            color: #00A9E0;
+            text-decoration: none;
+        }
+
+        .about-text a:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            background: #2d3436;
-            color: white;
-            padding: 60px 0;
+            background: #f5f5f5;
+            color: #636e72;
+            padding: 40px 0;
             text-align: center;
+            font-size: 14px;
         }
 
         footer a {
-            color: white;
+            color: #636e72;
             text-decoration: none;
-            margin: 0 20px;
-            transition: opacity 0.3s;
+            font-weight: 700;
+            transition: color 0.3s;
         }
 
         footer a:hover {
-            opacity: 0.7;
-        }
-
-        .footer-links {
-            margin-bottom: 30px;
+            color: #00A9E0;
         }
 
         /* Mobile Responsive */
@@ -372,6 +427,16 @@
 
             .hero .subheadline {
                 font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                font-size: 18px;
+                padding: 14px 32px;
+                margin: 40px auto;
+            }
+
+            .hero-bridge {
+                margin: 40px auto;
             }
 
             .header-content {
@@ -404,6 +469,19 @@
             .book-section {
                 padding: 40px 20px;
             }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-photo {
+                text-align: center;
+            }
+
+            .about-photo img {
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -421,20 +499,13 @@
     <section class="hero">
         <div class="container">
             <h1>The Five Lightbulbs Framework</h1>
-            <p class="subheadline">Every product is a life-changing message. Billy Broas created this simple yet powerful framework to help you discover it.</p>
-
-            <img src="images/The-Five-Lightbulbs-Messaging-Framework.jpg" alt="The Five Lightbulbs Framework Bridge" style="width: 100%; max-width: 100%; margin: 50px 0; display: block;">
-
-            <a href="#framework" class="btn btn-primary" style="margin-top: 30px;">See the Framework</a>
+            <p class="subheadline">Every product contains a life-changing message. Billy Broas created this simple yet powerful framework to help you discover it.</p>
         </div>
     </section>
 
     <!-- Framework Section -->
     <section id="framework" class="framework">
         <div class="container">
-            <h2>The Five Lightbulbs framework</h2>
-            <p class="framework-intro">The Five Lightbulbs framework tells a story. It's the story of how a prospect becomes a customer. When you map your product messaging to this story and give your customers these five 'aha moments,' they'll see you as their best option.</p>
-
             <!-- Lightbulb 1 -->
             <div class="lightbulb">
                 <img src="images/5-Lightbulbs-Lightbulb-1.jpg" alt="Lightbulb 1 - Your Customer's Status Quo" class="lightbulb-image">
@@ -490,51 +561,40 @@
             </div>
 
             <!-- Full Diagram -->
-            <img src="images/The-Five-Lightbulbs-Messaging-Framework.jpg" alt="Complete Five Lightbulbs Framework" style="width: 100%; max-width: 1000px; margin: 80px auto; display: block; border-radius: 12px;">
-
-            <div class="framework-closing">
-                <p>These are the Five Lightbulbs. Don't let them fool you—they're simple, but you can spend years exploring their depths.</p>
-                <p>If you want to go deeper into The Five Lightbulbs, start by reading Billy's book, Simple Marketing for Smart People, which shares the marketing philosophy behind The Five Lightbulbs.</p>
-                <a href="https://www.amazon.com/Simple-Marketing-Smart-People-Overthinking/dp/1544534477" target="_blank" class="btn btn-primary">Get the Book</a>
-            </div>
+            <img src="images/The-Five-Lightbulbs-Messaging-Framework.jpg" alt="Complete Five Lightbulbs Framework" style="width: 100%; max-width: 1000px; margin: 80px auto 10px auto; display: block; border-radius: 12px;">
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-subsection">
-                    <h2>About The Five Lightbulbs</h2>
-                    <p>The Five Lightbulbs framework gives you a better way to build your marketing message—one that respects your audience's intelligence.</p>
-                    <p>Most marketing approaches treat persuasion as manipulation: bypass rational thinking, trigger subconscious responses, create artificial urgency. But humans aren't machines to be hacked.</p>
-                    <p>The Five Lightbulbs takes a different approach: we build clear, honest arguments. We appeal to people's better judgment, not their weaknesses. We give them genuine reasons to believe, not psychological tricks.</p>
-                    <p>This framework helps you construct a compelling case for why someone should choose you—through reasoning, not manipulation.</p>
-                    <p>Your business is fueled by words: the words on your sales page, website, emails, ads, and the words you say to prospects on sales calls.</p>
-                    <p>Those words matter.</p>
-                    <p>The Five Lightbulbs gives you messaging that persuades through clarity and conviction, not tricks and tactics.</p>
+            <div class="about-grid">
+                <div class="about-photo">
+                    <img src="images/billy-broas-photo.jpg" alt="Billy Broas">
                 </div>
 
-                <div class="about-subsection">
-                    <h2>About Billy</h2>
-                    <img src="images/billy-broas-photo.jpg" alt="Billy Broas" style="max-width: 400px; margin: 40px auto; display: block; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <p>I'm Billy Broas, creator of the Five Lightbulbs framework.</p>
-                    <p>My background isn't in marketing—I studied science and technology, spent seven years in energy, and learned marketing only when I needed to build my own business.</p>
-                    <p>That outsider perspective revealed something troubling: most marketing had become a race to manipulate rather than persuade. I wanted an approach grounded in honest persuasion, not psychological exploitation.</p>
+                <div class="about-text">
+                    <h2>About Billy Broas</h2>
+                    <p>I created the Five Lightbulbs framework.</p>
+
+                    <p>My background isn't in marketing. I studied science and technology, spent seven years in the energy industry, then learned marketing when I needed to build my own business.</p>
+
+                    <p>That outsider perspective revealed something troubling: marketing had become about manipulation, not persuasion. I wanted an approach grounded in honest persuasion, not psychological exploitation.</p>
+
                     <p>The Five Lightbulbs emerged from that conviction. It's built for established professionals who want clarity in their marketing without compromising their integrity.</p>
-                    <p>If you believe marketing should respect intelligence and build genuine conviction—not hack psychology and manufacture urgency—this framework is for you.</p>
 
-                    <h3 style="color: #00A9E0; margin: 40px 0 20px;">Want to go deeper?</h3>
-                    <p>Start with my book, <em>Simple Marketing for Smart People</em>. It explores the philosophy behind argument-based marketing and why it works better than manipulation-based tactics.</p>
-                    <p>Rooting for you,<br><strong>Billy</strong></p>
+                    <p>If you believe marketing should respect intelligence and build conviction—not hack psychology and manufacture urgency—the Five Lightbulbs is for you.</p>
 
-                    <div class="book-section">
-                        <img src="images/simple-marketing-for-smart-people-book.png" alt="Simple Marketing for Smart People book cover" style="max-width: 300px; margin: 0 auto 30px; display: block;">
-                        <p style="text-align: center; margin-bottom: 30px;"><strong>Now Available - Order on Amazon</strong></p>
-                        <div style="text-align: center;">
-                            <a href="https://www.amazon.com/Simple-Marketing-Smart-People-Overthinking/dp/1544534477" target="_blank" class="btn btn-primary">Get the Book</a>
-                        </div>
-                    </div>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <h2 style="color: #00A9E0; font-size: 2.5rem; text-align: center; margin-bottom: 40px;">Want to Go Deeper?</h2>
+                <p style="text-align: center; font-size: 20px; line-height: 1.7; max-width: 700px; margin: 0 auto 40px; color: #636e72;">Start with the book that introduces the concept of "Belief Building" and explores why argument-based marketing works better than manipulation.</p>
+                <img src="images/simple-marketing-for-smart-people-book.png" alt="Simple Marketing for Smart People book cover" style="max-width: 300px; margin: 0 auto 30px; display: block;">
+                <p style="text-align: center; margin-bottom: 30px;"><strong>Now Available - Order on Amazon</strong></p>
+                <div style="text-align: center;">
+                    <a href="https://www.amazon.com/Simple-Marketing-Smart-People-Overthinking/dp/1544534477" target="_blank" class="btn btn-primary">Get the Book</a>
                 </div>
             </div>
         </div>
@@ -543,12 +603,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms and Conditions</a>
-                <a href="mailto:billy@fivelightbulbs.com">Send us a message</a>
-            </div>
-            <p>&copy; 2025 Lynchpin Media</p>
+            <p>&copy; 2025 Linchpin Media, LLC | Learn more at <a href="https://marketingisanargument.com" target="_blank">MarketingIsAnArgument.com</a></p>
         </div>
     </footer>
 
