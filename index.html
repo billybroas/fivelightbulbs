@@ -363,7 +363,7 @@
             height: auto;
         }
 
-        .lightbulb h3 {
+        .lightbulb h2 {
             color: #00A9E0;
             font-size: 1.8rem;
             margin-bottom: 20px;
@@ -535,10 +535,48 @@
                 max-width: 300px;
             }
         }
+
+        /* Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: #E63946;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 3px solid #00A9E0;
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header -->
     <header>
         <div class="header-content">
@@ -548,6 +586,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -565,7 +604,7 @@
                 <img src="images/5-Lightbulbs-Lightbulb-1.jpg" alt="Five Lightbulbs Framework Stage 1 - Your Customer's Status Quo: understanding where they stand before they find you"
                     class="lightbulb-image">
                 <div class="lightbulb-content">
-                    <h3 data-number="1">Lightbulb 1 - Your Customer's Status Quo</h3>
+                    <h2 data-number="1">Lightbulb 1 - Your Customer's Status Quo</h2>
                     <p>Every customer is standing somewhere before they find you. They have a problem they live with
                         daily, and a way of describing it that is theirs alone.</p>
                     <p>The first Lightbulb turns on when they feel understood. Not sold to, not educated. Understood.
@@ -578,7 +617,7 @@
                 <img src="images/5-Lightbulbs-Lightbulb-2-Other-Things-Theyve-Tried.jpg"
                     alt="Five Lightbulbs Framework Stage 2 - Other Things They've Tried: naming the solutions that didn't work" class="lightbulb-image">
                 <div class="lightbulb-content">
-                    <h3 data-number="2">Lightbulb 2 - Other Things They've Tried</h3>
+                    <h2 data-number="2">Lightbulb 2 - Other Things They've Tried</h2>
                     <p>They've already tried to solve this. They've read the books, hired the person, bought the tool.
                         Some of it helped, but most didn't.</p>
                     <p>The second Lightbulb turns on when you name those attempts with honesty. Your customer already
@@ -591,7 +630,7 @@
                 <img src="images/5-Lightbulbs-Lightbulb-3-Your-Approach-1.jpg" alt="Five Lightbulbs Framework Stage 3 - Your Approach: the idea behind your solution that makes it work"
                     class="lightbulb-image">
                 <div class="lightbulb-content">
-                    <h3 data-number="3">Lightbulb 3 - Your Approach</h3>
+                    <h2 data-number="3">Lightbulb 3 - Your Approach</h2>
                     <p>Lightbulb 3 is not your product. It's the <i>idea</i> behind it. It's the reason your solution works
                         where others fall short.</p>
                     <p>The third Lightbulb turns on when the customer thinks, "This makes sense. This is the right way
@@ -604,7 +643,7 @@
                 <img src="images/5-Lightbulbs-Lightbulb-4-Your-Offer.jpg" alt="Five Lightbulbs Framework Stage 4 - Your Offer: the full picture of what someone gets when they buy"
                     class="lightbulb-image">
                 <div class="lightbulb-content">
-                    <h3 data-number="4">Lightbulb 4 - Your Offer</h3>
+                    <h2 data-number="4">Lightbulb 4 - Your Offer</h2>
                     <p>Your offer includes your product, but isn't limited to it. Lightbulb 4 is the full picture of what
                         someone gets when they buy. Only after you turn on the other Lightbulbs does the offer make
                         sense.</p>
@@ -618,7 +657,7 @@
                 <img src="images/5-Lightbulbs-Lightbulb-5-Your-Customers-New-Life.jpg"
                     alt="Five Lightbulbs Framework Stage 5 - Your Customer's New Life: the destination after success with your product" class="lightbulb-image">
                 <div class="lightbulb-content">
-                    <h3 data-number="5">Lightbulb 5 - Your Customer's New Life</h3>
+                    <h2 data-number="5">Lightbulb 5 - Your Customer's New Life</h2>
                     <p>Your customer needs to see the destination. What does their life look like after success with
                         your product?</p>
                     <p>Without this, you may earn interest and trust, but not action.</p>
@@ -645,9 +684,9 @@
 
                     <p>Before this career, I was a scientist and engineer. That background taught me to think in structures. The Five Lightbulbs is the structure I kept finding underneath every piece of marketing that worked.</p>
 
-                    <p>I wrote a book about the framework's philosophy called <a href="https://simplemarketingbook.com" target="_blank"><em>Simple Marketing for Smart People</em></a>. More recently, I wrote a manifesto called <a href="https://marketingisanargument.com" target="_blank"><em>Marketing Is An Argument</em></a> that goes deeper into the morality and ethics behind marketing.</p>
+                    <p>I wrote a book about the framework's philosophy called <a href="https://simplemarketingbook.com" target="_blank" rel="noopener noreferrer"><em>Simple Marketing for Smart People</em></a>. More recently, I wrote a manifesto called <a href="https://marketingisanargument.com" target="_blank" rel="noopener noreferrer"><em>Marketing Is An Argument</em></a> that goes deeper into the morality and ethics behind marketing.</p>
 
-                    <p>I work with businesses <a href="https://billybroas.com/hire/" target="_blank">one-on-one</a> to apply the framework to their messaging.</p>
+                    <p>I work with businesses <a href="https://billybroas.com/hire/" target="_blank" rel="noopener noreferrer">one-on-one</a> to apply the framework to their messaging.</p>
 
                 </div>
             </div>
@@ -669,11 +708,13 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Linchpin Media, LLC | Learn more at <a href="https://marketingisanargument.com"
-                    target="_blank">MarketingIsAnArgument.com</a></p>
+                    target="_blank" rel="noopener noreferrer">MarketingIsAnArgument.com</a></p>
             <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">No tracking pixels. No cookies. Your attention is still yours.</p>
         </div>
     </footer>
